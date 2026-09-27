@@ -1,0 +1,93 @@
+{
+  "model_name": "Random Forest Regressor",
+  "pipeline_steps": [
+    "StandardScaler",
+    "RandomForestRegressor"
+  ],
+  "feature_names": [
+    "Cement",
+    "Blast Furnace Slag",
+    "Fly Ash",
+    "Water",
+    "Superplasticizer",
+    "Coarse Aggregate",
+    "Fine Aggregate",
+    "Age"
+  ],
+  "target_name": "Concrete Compressive Strength",
+  "train_samples": 804,
+  "test_samples": 201,
+  "test_metrics": {
+    "r2": 0.9108,
+    "mse": 26.6161,
+    "rmse": 5.1591,
+    "mae": 3.4168
+  },
+  "cv_metrics_5fold": {
+    "cv_r2_mean": 0.8863,
+    "cv_rmse_mean": 5.3483,
+    "cv_mae_mean": 3.8707
+  },
+  "error_analysis": {
+    "mae_error_margin": 3.42,
+    "rmse_error_margin": 5.16,
+    "p95_error_margin": 9.54,
+    "oof_mae": 3.87,
+    "oof_medae": 2.84,
+    "oof_p90": 8.53,
+    "oof_p95": 10.56,
+    "methodology_description": "Empirical error statistics calculated from 5-fold out-of-fold training predictions and held-out test residuals. These represent observed error magnitudes and do not constitute guaranteed confidence intervals."
+  },
+  "model_comparison": [
+    {
+      "Model": "Linear Regression",
+      "Test R²": "0.5801",
+      "Test MSE": "125.2653",
+      "Test RMSE": "11.1922",
+      "Test MAE": "8.8960",
+      "CV R² Mean": "0.5895",
+      "CV RMSE Mean": "10.2027",
+      "CV MAE Mean": "8.1003"
+    },
+    {
+      "Model": "Polynomial Regression",
+      "Test R²": "0.7686",
+      "Test MSE": "69.0364",
+      "Test RMSE": "8.3088",
+      "Test MAE": "6.2205",
+      "CV R² Mean": "0.7730",
+      "CV RMSE Mean": "7.5984",
+      "CV MAE Mean": "5.8601"
+    },
+    {
+      "Model": "Decision Tree Regressor",
+      "Test R²": "0.8671",
+      "Test MSE": "39.6385",
+      "Test RMSE": "6.2959",
+      "Test MAE": "3.9451",
+      "CV R² Mean": "0.7907",
+      "CV RMSE Mean": "7.2945",
+      "CV MAE Mean": "4.9944"
+    },
+    {
+      "Model": "Random Forest Regressor",
+      "Test R²": "0.9108",
+      "Test MSE": "26.6161",
+      "Test RMSE": "5.1591",
+      "Test MAE": "3.4168",
+      "CV R² Mean": "0.8863",
+      "CV RMSE Mean": "5.3483",
+      "CV MAE Mean": "3.8707"
+    },
+    {
+      "Model": "Gradient Boosting Regressor",
+      "Test R²": "0.8979",
+      "Test MSE": "30.4535",
+      "Test RMSE": "5.5185",
+      "Test MAE": "4.0958",
+      "CV R² Mean": "0.8906",
+      "CV RMSE Mean": "5.2556",
+      "CV MAE Mean": "3.8981"
+    }
+  ]
+}
