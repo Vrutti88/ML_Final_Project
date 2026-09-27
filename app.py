@@ -430,27 +430,25 @@ if btn_calc:
 
     strength_pred = float(pipeline.predict(input_row)[0])
 
-    st.markdown(f"""
-    <div class="result-card">
-        <div class="result-badge-text">Predicted Compressive Strength</div>
-        <div class="result-value-big">{strength_pred:.2f} <span class="result-value-unit">MPa</span></div>
-        
-        <div class="range-box">
-            <div class="range-box-title">Model Error Statistics</div>
-            <div class="error-row">
-                <span class="error-label">Average Error (MAE)</span>
-                <span class="error-badge">{TEST_MAE:.2f} MPa</span>
-            </div>
-            <div class="error-row">
-                <span class="error-label">95th Percentile Absolute Error</span>
-                <span class="error-badge">{P95_ERROR:.2f} MPa</span>
-            </div>
-            <div class="range-box-sub">
-                Based on model evaluation data. This is not a guaranteed prediction interval.
-            </div>
-        </div>
-    </div>
-    """, unsafe_allow_html=True)
+    card_html = f"""<div class="result-card">
+<div class="result-badge-text">Predicted Compressive Strength</div>
+<div class="result-value-big">{strength_pred:.2f} <span class="result-value-unit">MPa</span></div>
+<div class="range-box">
+<div class="range-box-title">Model Error Statistics</div>
+<div class="error-row">
+<span class="error-label">Average Error (MAE)</span>
+<span class="error-badge">{TEST_MAE:.2f} MPa</span>
+</div>
+<div class="error-row">
+<span class="error-label">95th Percentile Absolute Error</span>
+<span class="error-badge">{P95_ERROR:.2f} MPa</span>
+</div>
+<div class="range-box-sub">
+Based on model evaluation data. This is not a guaranteed prediction interval.
+</div>
+</div>
+</div>"""
+    st.markdown(card_html, unsafe_allow_html=True)
 
 def get_comparison_table(metadata_obj):
     """Retrieve the five-model benchmark comparison from model metadata."""
