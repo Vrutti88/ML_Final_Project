@@ -32,7 +32,7 @@ The dataset comprises 8 input features and 1 continuous target:
 | **Cement** | Primary hydraulic binder; hydrates to form C-S-H gel | kg/m³ | 102.0 – 540.0 |
 | **Blast Furnace Slag** | Supplementary cementitious material; latent hydraulic binder | kg/m³ | 0.0 – 359.4 |
 | **Fly Ash** | Supplementary cementitious material (pozzolan); secondary binder | kg/m³ | 0.0 – 200.1 |
-| **Water** | Essential reactant for hydration; excess increases capillary porosity | kg/m³ | 121.8 – 247.0 |
+| **Water** | Essential reactant for hydration; excess increases capillary porosity | kg/m³ | 121.75 – 247.0 |
 | **Superplasticizer** | Chemical admixture (high-range water reducer) | kg/m³ | 0.0 – 32.2 |
 | **Coarse Aggregate** | Crushed stone/gravel (>4.75 mm); primary structural skeleton | kg/m³ | 801.0 – 1145.0 |
 | **Fine Aggregate** | Natural sand (<4.75 mm); fills voids between coarse aggregate | kg/m³ | 594.0 – 992.6 |
@@ -102,7 +102,7 @@ To avoid misrepresenting error statistics:
 ## Project Structure
 
 ```text
-Concrete-Strength-Prediction/
+ML_Final_Project/
 │
 ├── concrete_strength_prediction.ipynb   # Complete 33-section executed Jupyter Notebook
 ├── Concrete_Compressive_Strength.csv   # Primary UCI dataset file
@@ -110,7 +110,8 @@ Concrete-Strength-Prediction/
 ├── best_model_pipeline.joblib          # Trained & serialized Scikit-learn Pipeline
 ├── model_metadata.json                 # Companion model metrics & error statistics
 ├── requirements.txt                    # Exact pinned dependencies for reproducibility
-└── README.md                           # Comprehensive project documentation
+├── README.md                           # Comprehensive project documentation
+└── .gitignore                          # Git ignore specification
 ```
 
 ---
