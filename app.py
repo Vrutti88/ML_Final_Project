@@ -113,29 +113,49 @@ st.markdown("""
 
     /* Error Statistics Box */
     .range-box {
-        background: rgba(30, 58, 138, 0.35);
-        border: 1px solid rgba(96, 165, 250, 0.3);
+        margin-top: 16px;
+        background: rgba(30, 58, 138, 0.25);
+        border: 1px solid rgba(96, 165, 250, 0.25);
         border-radius: 8px;
-        padding: 12px 16px;
+        padding: 14px 16px;
         text-align: left;
     }
     .range-box-title {
-        font-size: 12px;
+        font-size: 11.5px;
         font-weight: 700;
         color: #93c5fd;
-        margin-bottom: 6px;
+        margin-bottom: 8px;
         text-transform: uppercase;
-        letter-spacing: 0.04em;
+        letter-spacing: 0.05em;
     }
-    .range-box-val {
-        font-size: 13.5px;
-        font-weight: 600;
-        color: #f1f5f9;
-        margin: 3px 0;
+    .error-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 6px 0;
+        border-bottom: 1px solid rgba(148, 163, 184, 0.12);
+    }
+    .error-row:last-of-type {
+        border-bottom: none;
+    }
+    .error-label {
+        font-size: 13px;
+        color: #cbd5e1;
+        font-weight: 500;
+    }
+    .error-badge {
+        font-size: 13px;
+        font-weight: 700;
+        color: #f8fafc;
+        background: rgba(59, 130, 246, 0.2);
+        border: 1px solid rgba(96, 165, 250, 0.35);
+        border-radius: 5px;
+        padding: 2px 8px;
+        font-family: 'Space Grotesk', sans-serif;
     }
     .range-box-sub {
         font-size: 11px;
-        color: #cbd5e1;
+        color: #94a3b8;
         margin-top: 8px;
         line-height: 1.4;
     }
@@ -417,8 +437,14 @@ if btn_calc:
         
         <div class="range-box">
             <div class="range-box-title">Model Error Statistics</div>
-            <div class="range-box-val">Average Error (MAE): {TEST_MAE:.2f} MPa</div>
-            <div class="range-box-val">95th Percentile Absolute Error: {P95_ERROR:.2f} MPa</div>
+            <div class="error-row">
+                <span class="error-label">Average Error (MAE)</span>
+                <span class="error-badge">{TEST_MAE:.2f} MPa</span>
+            </div>
+            <div class="error-row">
+                <span class="error-label">95th Percentile Absolute Error</span>
+                <span class="error-badge">{P95_ERROR:.2f} MPa</span>
+            </div>
             <div class="range-box-sub">
                 Based on model evaluation data. This is not a guaranteed prediction interval.
             </div>
