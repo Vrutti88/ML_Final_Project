@@ -478,7 +478,7 @@ with st.expander("📊 Academic Model Details & 5-Fold Evaluation"):
     st.markdown("#### Five-Model Comparison")
     comp_df = get_comparison_table(metadata)
     if comp_df is not None:
-        st.table(comp_df)
+        st.dataframe(comp_df, hide_index=True, use_container_width=True)
     else:
         st.info("Model comparison data is not available in model_metadata.json.")
 
