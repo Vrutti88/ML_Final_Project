@@ -15,7 +15,7 @@ import streamlit as st
 # Configure page settings — Centered, cohesive layout
 st.set_page_config(
     page_title="Concrete Compressive Strength Predictor",
-    page_icon="🧱",
+    page_icon="🧱🏗️",
     layout="centered",
     initial_sidebar_state="collapsed"
 )
